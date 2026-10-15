@@ -1,0 +1,59 @@
+﻿@model Customer
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+      <h2> Create </h2>
+      <!--
+       <form action="/Home/Save" method="post">
+           Name: <input type="text" name="CustomerName" /> <br />
+           Address:<textarea name="Address"></textarea> <br />
+           Email ID:<input type="text" name="EmailID" /> <br />
+           Mobile No:<input type="text" name="Mobile" /> <br />
+           Credit Limit:<input type="text" name="CreditLimit" /> <br />
+           <input type="submit" value="Save" />
+       </form>
+       -->
+        <!-- current controller=Home current action=Create -->
+        <form  method="Post"> 
+             <div>
+                 <label asp-for="CustomerName"></label>
+                 <div>
+                    @Html.EditorFor(prop=>prop.CustomerName)
+                 </div>
+             </div>
+             <div>
+                 <label asp-for="Address"></label>
+                 <div>
+                    @Html.TextArea("Address","",4,20,null)
+                 </div>
+             </div>
+        <div>
+            <label asp-for="EmailID"></label>
+            <div>
+                <input asp-for="EmailID" />
+            </div>
+        </div>
+            <div>
+               <label asp-for="MobileNo"></label>
+               <div>
+                <input asp-for="MobileNo" />
+                </div>
+            </div>
+
+             <div>
+                 <label asp-for="CreditLimit"></label>
+                 <div>
+                     <input asp-for="CreditLimit" />
+                 </div>
+             </div>
+
+             <div>
+                 <input type="submit" value="Save" />
+             </div>
+        </form>
+
+    </body>
+    </html>
